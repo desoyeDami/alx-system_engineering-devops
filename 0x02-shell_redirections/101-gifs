@@ -1,2 +1,2 @@
 #!/bin/bash
-find -typef -name "*.gif" -printf "%f\n" | rev | cut -d'.' -f2- | rev | LC_ALL=C sort -f
+find -typef -name "*.gif" -exec sh -c "%f\n" 'echo "${0%.*' {} \; | rev | LC_ALL=C sort -f
