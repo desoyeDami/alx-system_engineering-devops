@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# This script configures Nginx to redirect /redirect_me to another page with a 301 status
+
+# Update package list and install Nginx if it's not installed
+apt-get update
+apt-get install -y nginx
+
+# Configure Nginx to redirect /redirect_me
+cat > /etc/nginx/sites-available/default << 'EOF'
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /redirect_me {
+        return 301 https://www.example.com;
+    }
+}
+EOF
+
+# Test Nginx configuration
+nginx -t
+
+# Restart Nginx
+service nginx restart
+

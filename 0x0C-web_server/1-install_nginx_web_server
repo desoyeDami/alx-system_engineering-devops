@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# This script installs Nginx and configures it to serve a "Hello World!" page
+
+# Update package list
+apt-get update
+
+# Install Nginx
+apt-get install -y nginx
+
+# Configure Nginx to serve "Hello World!" page
+cat > /etc/nginx/sites-available/default << 'EOF'
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        return 200 'Hello World!';
+        add_header Content-Type text/plain;
+    }
+}
+EOF
+
+# Test Nginx configuration
+nginx -t
+
+# Restart Nginx
+service nginx restart
+
