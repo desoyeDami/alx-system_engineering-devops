@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script ensures the Apache server is running and configured to return "Hello Holberton"
+
+# Start the Apache server
+service apache2 start
+
+# Ensure the web server root contains the correct page
+echo "Hello Holberton" > /var/www/html/index.html
+
