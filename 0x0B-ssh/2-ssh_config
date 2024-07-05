@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cat <<EOL > ~/.ssh/config 
+Host my-server
+	IdentityFile ~/.ssh/school
+	IdentitiesOnly yes
+	PasswordAuthentication no
+EOL
