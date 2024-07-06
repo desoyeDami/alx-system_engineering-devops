@@ -1,3 +1,5 @@
+# Puppet manifest to configure SSH client settings
+# Ensures SSH client uses specified private key and disables password authentication
 file { '/root/.ssh':
   ensure  => 'directory',
   owner   => 'root',
