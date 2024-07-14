@@ -36,4 +36,4 @@ sudo service nginx restart
 # Check Nginx status
 echo "Checking Nginx status..."
 sudo service nginx status
-"4-not_found_page_404" 38L, 969C                                                                                                                                              15,15         All
+                                                                                                                                                                              11,1          All
