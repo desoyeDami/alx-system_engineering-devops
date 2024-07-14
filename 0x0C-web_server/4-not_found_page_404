@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script Configure your Nginx server so that /redirect_me is redirecting to another page.
 
-echo -e "Ceci n'est pas une page\n" | sudo tee /usr/share/nginx/html/custom_404.html
+echo -e "Ceci n'est pas une page \n" | sudo tee /usr/share/nginx/html/custom_404.html
 sudo bash -c 'cat > /etc/nginx/sites-available/default' << 'EOF'
 server {
     listen 80 default_server;
