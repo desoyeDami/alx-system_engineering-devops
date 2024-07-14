@@ -16,7 +16,7 @@ service { 'nginx':
 # Configure the Nginx default site
 file { '/etc/nginx/sites-available/default':
   ensure  => file,
-  content => template('nginx/default.erb'),
+  content => template('alx-system_engineering-devops/0x0C-web_server/templates/default.erb'),
   require => Package['nginx'],
   notify  => Service['nginx'],
 }
