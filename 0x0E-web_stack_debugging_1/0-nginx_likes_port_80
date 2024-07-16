@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cat > /etc/nginx/sites-available/default << 'EOF'
+server {
+	listen 0.0.0.0:80;
+}
+EOF
+
+service nginx restart
