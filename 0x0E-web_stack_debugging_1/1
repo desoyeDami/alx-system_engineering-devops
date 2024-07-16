@@ -1,2 +1,21 @@
- * Restarting nginx nginx
-   ...done.
+rm: cannot remove '/etc/nginx/sites-enabled/default': Permission denied
+ln: failed to create symbolic link '/etc/nginx/sites-enabled/default': File exists
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2024-07-16 14:30:56 WAT; 29ms ago
+       Docs: man:nginx(8)
+    Process: 7370 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 7372 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 7373 (nginx)
+      Tasks: 5 (limit: 4268)
+     Memory: 5.4M
+        CPU: 61ms
+     CGroup: /system.slice/nginx.service
+             ├─7373 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─7374 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+             ├─7375 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+             ├─7376 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+             └─7377 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""
+
+Jul 16 14:30:56 linuxbox systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jul 16 14:30:56 linuxbox systemd[1]: Started A high performance web server and a reverse proxy server.

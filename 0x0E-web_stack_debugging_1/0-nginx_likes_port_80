@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-# Reconfigure nginx for IPv4
-cat > /etc/nginx/sites-available/default << 'EOF'
-server {
-	listen 0.0.0.0:80 default_server;
-}
-EOF
+#Configure IPv4 port
 
-service nginx restart
+rm /etc/nginx/sites-enabled/default 
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+sudo service nginx restart 
+sudo service nginx status
