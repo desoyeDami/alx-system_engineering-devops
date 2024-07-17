@@ -1,5 +1,5 @@
-#!/bin/bash
-#Function to query and display
+#!/usr/bin/env bash
+#Bash script that will display information about subdomains.
 
 check_subdomain() {
 	subdomain=$1
