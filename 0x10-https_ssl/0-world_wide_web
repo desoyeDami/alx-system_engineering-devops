@@ -5,8 +5,8 @@ check_subdomain() {
 	subdomain=$1
 	domain=$2
 	dig_output=$(dig "${subdomain}"."${domain}" | grep -A1 'ANSWER SECTION')
-	record_type=$(echo "$dig_output" | awk '{print $4}')
-	destination=$(echo "$dig_output" | awk '{print $5}')
+	record_type=$(echo "$dig_output" | awk '/ANSWER SECTION/{getline; print $4}')
+	destination=$(echo "$dig_output" | awk '/ANSWER SECTION/{getline; print $5}')
 	echo "The subdomain ${subdomain} is a ${record_type} record and points to ${destination}"
 }
 
