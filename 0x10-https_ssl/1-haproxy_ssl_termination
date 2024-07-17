@@ -1,0 +1,8 @@
+frontend www-https
+    bind *:443 ssl crt /etc/letsencrypt/live/desoyedami.tech/fullchain.pem
+    http-response set-header X-Holberton-School "Holberton School"
+    acl is_www hdr(host) -i www.desoyedami.tech
+    use_backend www_backend if is_www
+
+backend www_backend
+    server web-01 52.87.216.220
