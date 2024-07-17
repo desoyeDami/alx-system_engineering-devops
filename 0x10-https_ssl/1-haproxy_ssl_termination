@@ -5,4 +5,4 @@ frontend www-https
     use_backend www_backend if is_www
 
 backend www_backend
-    server web-01 52.87.216.220
+    server lb-01 54.89.26.0
