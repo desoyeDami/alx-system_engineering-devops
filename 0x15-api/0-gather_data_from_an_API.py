@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-# Python script that returns an employee todo info by taking the employee's id
+"""
+    Python script that returns an employee todo
+    info by taking the employee's id
+"""
 import requests
 import sys
 
