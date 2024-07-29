@@ -4,7 +4,7 @@ import sys
 
 
 def get_employee_todo_progress(employee_id):
-    """ """
+    """Function to  Get employee todo progress """
     GENERAL_URL = "https://jsonplaceholder.typicode.com/"
 
     # Employee Deta
@@ -28,6 +28,6 @@ def get_employee_todo_progress(employee_id):
 
 
 if __name__ == "__main__":
-    """ """
+    """To Prevent code from executing when imported"""
     employee_id = int(sys.argv[1])
     get_employee_todo_progress(employee_id)
