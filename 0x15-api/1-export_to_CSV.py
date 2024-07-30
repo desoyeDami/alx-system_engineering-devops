@@ -3,9 +3,9 @@
     Python script that returns an employee todo
     info by taking the employee's id
 """
+import csv
 import requests
 import sys
-import csv
 
 
 def get_employee_todo_progress(employee_id):
@@ -34,14 +34,14 @@ def export_csv(employee_id, EMPLOYEE_NAME, TODOs):
     """ FUnction to create a csv file and input task details"""
     filename = f"{employee_id}.csv"
     with open(filename, mode='w', newline='') as file:
-        w = csv.writer(file)
+        w = csv.writer(file, quoting=csv.QUOTE_ALL)
 
         for todo in TODOs:
             w.writerow([
-                f'"{employee_id}"',
-                f'"{EMPLOYEE_NAME}"',
-                f'"{todo.get("completed")}"',
-                f'"{todo.get("title")}"'
+                f"{employee_id}",
+                f"{EMPLOYEE_NAME}",
+                f"{todo.get('completed')}",
+                f'{todo.get("title")}'
                 ])
 
 
