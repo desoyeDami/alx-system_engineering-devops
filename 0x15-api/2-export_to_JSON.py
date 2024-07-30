@@ -29,7 +29,7 @@ def get_employee_todo_progress(employee_id):
 
 
 def export_json(employee_id, EMPLOYEE_NAME, TODOs):
-    """ FUnction to create a csv file and input task details"""
+    """ FUnction to create a json file and input task details"""
     data = {
         employee_id: [
             {
