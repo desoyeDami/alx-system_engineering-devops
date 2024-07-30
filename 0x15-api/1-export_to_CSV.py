@@ -15,7 +15,7 @@ def get_employee_todo_progress(employee_id):
     # Employee Deta
     EMPLOYEE_URL = f"{GENERAL_URL}/users/{employee_id}"
     EMPLOYEE_RESPONSE = requests.get(EMPLOYEE_URL).json()
-    EMPLOYEE_NAME = EMPLOYEE_RESPONSE.get('name')
+    EMPLOYEE_NAME = EMPLOYEE_RESPONSE.get('username')
 
     # Employee Todo list
     TODO_URL = f"{GENERAL_URL}/todos?userId={employee_id}"
