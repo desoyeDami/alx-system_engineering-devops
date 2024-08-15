@@ -4,10 +4,10 @@
 import requests
 
 
-def number_of_subscribers(subreddit):
+def top_ten(subreddit):
     """query a subreddit and retrive no of subscribers"""
 
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
 
     headers = {'User-Agent': 'My user Agent 1.0'}
 
@@ -16,6 +16,8 @@ def number_of_subscribers(subreddit):
     if response.status_code == 200:
         # parse JSON response to extract no of subscribers
         data = response.json()
-        return data['data']['subscribers']
+        posts = data['data']['children']
+        for post in posts[:10]:
+            print(post['data']['title'])
     else:
-        return 0
+        print(None)
