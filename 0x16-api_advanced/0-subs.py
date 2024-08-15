@@ -1,18 +1,22 @@
 #!/usr/bin/python3
-""" Subreddit Subscribers"""
+"""Quering Reddit"""
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """ number of subscribers """
+    """query a subreddit and retrive no of subscribers"""
+
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {
-        'User-Agent': 'My user agent 1.0'
-    }
+
+    headers = {'User-Agent': 'My user Agent 1.0'}
+
     response = requests.get(url, headers=headers, allow_redirects=False)
+
     if response.status_code == 200:
+        # parse JSON response to extract no of subscribers
         data = response.json().get('data', {})
-        sub_cnt = data.get('subscribers', 0)
-        return sub_cnt
+        sub_count = data.get('subscribers', 0)
+        return sub_count
     else:
         return 0
